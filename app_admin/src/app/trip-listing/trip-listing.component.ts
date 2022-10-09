@@ -23,6 +23,7 @@ export class TripListingComponent implements OnInit {
     ) { }  //inject instance of service when class created
 
   private addTrip(): void {
+    console.log('Inside TripListingComponent#addTrip');
     this.router.navigate(['add-trip']);
   }
 

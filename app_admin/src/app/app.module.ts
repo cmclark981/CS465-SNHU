@@ -10,6 +10,7 @@ import { TripCardComponent } from './trip-card/trip-card.component';
 import { TripDataComponent } from './trip-data/trip-data.component';
 import { TripDataService } from 'services/trip-data.service';
 import { AddTripComponent } from './add-trip/add-trip.component';
+import { EditTripComponent } from './edit-trip/edit-trip.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddTripComponent } from './add-trip/add-trip.component';
     TripListingComponent,
     TripCardComponent,
     TripDataComponent,
-    AddTripComponent
+    AddTripComponent,
+    EditTripComponent
   ],
   imports: [
     BrowserModule,
