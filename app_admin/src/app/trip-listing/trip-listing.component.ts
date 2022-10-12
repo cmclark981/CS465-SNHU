@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 //import { trips } from '../data/trips';
-import { TripDataService } from 'services/trip-data.service';
-import { Trip } from 'models/trip';
+import { TripDataService } from 'src/app/services/trip-data.service';
+import { Trip } from 'src/app/models/trip';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-trip-listing',
@@ -19,6 +20,7 @@ export class TripListingComponent implements OnInit {
 
   constructor(
     private tripDataService: TripDataService,
+    private authService: AuthenticationService,
     private router: Router
     ) { }  //inject instance of service when class created
 
@@ -38,6 +40,10 @@ export class TripListingComponent implements OnInit {
         });
   }
 
+  public isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+  
   ngOnInit(): void {
     this.getTrips();  //invoke the local getTrips() when class initialized
   }
