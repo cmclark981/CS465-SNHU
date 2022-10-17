@@ -34,10 +34,10 @@ export class TripListingComponent implements OnInit {
     this.message = 'Searching for trips';
     this.tripDataService //function to call service getTrips()
       .getTrips()
-        .then(foundTrips => {
-          this.message = foundTrips.length > 0 ? '' : 'No trips found';
-          this.trips = foundTrips;  //stores returned trips in local class variable
-        });
+      .then(foundTrips => {
+        this.message = foundTrips.length > 0 ? '' : 'No trips found';
+        this.trips = foundTrips;  //stores returned trips in local class variable
+      });
   }
 
   public isLoggedIn(): boolean {

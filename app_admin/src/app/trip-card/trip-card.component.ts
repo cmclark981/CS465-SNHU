@@ -10,7 +10,8 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class TripCardComponent implements OnInit {
 
-  @Input('trip') trip: any;
+  @Input('trip') trip: Trip;
+
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
@@ -18,14 +19,14 @@ export class TripCardComponent implements OnInit {
 
   ngOnInit() {
   }
-  public isLoggedIn(): boolean {
-    return this.authenticationService.isLoggedIn();
-  }
-
+  
   private editTrip(trip: Trip): void {
     localStorage.removeItem("tripCode");
     localStorage.setItem("tripCode", trip.code);
     this.router.navigate(['edit-trip']);
   }
-
+  
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
+  }
 }
